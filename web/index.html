@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Typing Trainer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="logo">type<span>trainer</span></div>
+    <div class="live">
+      <div class="metric"><span id="wpm">0</span><small>wpm</small></div>
+      <div class="metric"><span id="acc">100</span><small>% acc</small></div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Letters: open ones, the one in focus, and the ones still locked. -->
+    <section class="letters" aria-label="Letters">
+      <div id="letters" class="letter-row"></div>
+      <div id="letters-caption" class="letters-caption">&nbsp;</div>
+    </section>
+
+    <!-- The text to type. Each character becomes its own <span>. -->
+    <section id="text-box" class="text-box" tabindex="0" aria-label="Exercise text">
+      <div id="text" class="text">loading…</div>
+      <div id="focus-hint" class="focus-hint">tap here to start typing</div>
+    </section>
+    <!-- Invisible input: lets phone keyboards open and send characters. -->
+    <input id="hidden-input" class="hidden-input" autocomplete="off" autocapitalize="off"
+           autocorrect="off" spellcheck="false" aria-hidden="true">
+
+    <div class="finger-hint" id="finger-hint">&nbsp;</div>
+
+    <section id="keyboard" class="keyboard" aria-label="On-screen keyboard"></section>
+
+    <div class="toolbar">
+      <button id="btn-new" type="button">new exercise <kbd>esc</kbd></button>
+      <button id="btn-intro" type="button">how it works</button>
+      <label class="toggle"><input type="checkbox" id="heat-toggle"> difficulty heatmap</label>
+    </div>
+
+    <section id="result" class="result hidden" aria-live="polite"></section>
+    <section id="history" class="history"></section>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <!-- Intro: three short steps, shown on the first visit. -->
+  <div id="intro" class="intro hidden" role="dialog" aria-modal="true" aria-labelledby="intro-title">
+    <div class="intro-card">
+      <div class="intro-steps" id="intro-steps">
+        <section class="intro-step" data-step="0">
+          <p class="intro-kicker">touch typing, step by step</p>
+          <h2 id="intro-title">Type without looking down.</h2>
+          <p>You type real words. The trainer watches which letters trip you up or slow you
+             down, and puts them into the next exercise more often. No settings, no modes.</p>
+        </section>
+        <section class="intro-step" data-step="1">
+          <p class="intro-kicker">home position</p>
+          <h2>Fingers on the middle row.</h2>
+          <div class="home-row" id="intro-home" aria-hidden="true"></div>
+          <p>Feel the small bumps on <b>F</b> and <b>J</b>: your index fingers go there,
+             thumbs rest on space. Every key is colored by the finger that presses it.</p>
+        </section>
+        <section class="intro-step" data-step="2">
+          <p class="intro-kicker">how you progress</p>
+          <h2>A few letters first, then more.</h2>
+          <p>You start with the most common letters. Type each of them cleanly at
+             <b id="intro-target">30</b> words per minute and the next letter opens.
+             The highlighted letter is your weakest one right now.</p>
+          <p class="intro-small">Accuracy first. Speed comes on its own.</p>
+          <div class="intro-choice">
+            <button id="intro-new" type="button" class="primary">I'm new to this</button>
+            <button id="intro-pro" type="button">I can already touch type</button>
+          </div>
+        </section>
+      </div>
+      <div class="intro-nav">
+        <button id="intro-skip" type="button" class="link">skip</button>
+        <div class="dots" id="intro-dots"><i></i><i></i><i></i></div>
+        <button id="intro-next" type="button" class="primary">next</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

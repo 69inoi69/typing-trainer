@@ -1,0 +1,39 @@
+{
+  "id": "qwerty-en",
+  "name": "QWERTY (English)",
+  "fingers": {
+    "lp": { "name": "Left pinky",  "color": "#c98bd6" },
+    "lr": { "name": "Left ring",   "color": "#7fa6e0" },
+    "lm": { "name": "Left middle", "color": "#5fc4c4" },
+    "li": { "name": "Left index",  "color": "#8cc97a" },
+    "ri": { "name": "Right index", "color": "#e3c46a" },
+    "rm": { "name": "Right middle","color": "#e59a62" },
+    "rr": { "name": "Right ring",  "color": "#e57f8f" },
+    "rp": { "name": "Right pinky", "color": "#b38fe6" },
+    "th": { "name": "Thumb",       "color": "#9aa3ad" }
+  },
+  "offsets": [0, 0.25, 0.75, 2.75],
+  "rows": [
+    [
+      {"char":"q","finger":"lp"},{"char":"w","finger":"lr"},{"char":"e","finger":"lm"},
+      {"char":"r","finger":"li"},{"char":"t","finger":"li"},{"char":"y","finger":"ri"},
+      {"char":"u","finger":"ri"},{"char":"i","finger":"rm"},{"char":"o","finger":"rr"},
+      {"char":"p","finger":"rp"},{"char":"[","finger":"rp"},{"char":"]","finger":"rp"}
+    ],
+    [
+      {"char":"a","finger":"lp"},{"char":"s","finger":"lr"},{"char":"d","finger":"lm"},
+      {"char":"f","finger":"li","home":true},{"char":"g","finger":"li"},{"char":"h","finger":"ri"},
+      {"char":"j","finger":"ri","home":true},{"char":"k","finger":"rm"},{"char":"l","finger":"rr"},
+      {"char":";","finger":"rp"},{"char":"'","finger":"rp"}
+    ],
+    [
+      {"char":"z","finger":"lp"},{"char":"x","finger":"lr"},{"char":"c","finger":"lm"},
+      {"char":"v","finger":"li"},{"char":"b","finger":"li"},{"char":"n","finger":"ri"},
+      {"char":"m","finger":"ri"},{"char":",","finger":"rm"},{"char":".","finger":"rr"},
+      {"char":"/","finger":"rp"}
+    ],
+    [
+      {"char":" ","label":"space","finger":"th","width":6}
+    ]
+  ]
+}
